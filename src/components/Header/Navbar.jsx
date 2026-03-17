@@ -44,7 +44,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a href='https://github.com/Samirsrz/mission_restart_A3' className="btn bg-linear-to-r text-white font-semibold from-[#632EE3] to-[#9F62F2]"><FaGithub />Contribute</a>
+    <a href='https://github.com/Samirsrz' className="btn bg-linear-to-r text-white font-semibold from-[#632EE3] to-[#9F62F2]"><FaGithub />Contribute</a>
   </div>
 </div>
     );
