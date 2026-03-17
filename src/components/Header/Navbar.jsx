@@ -1,22 +1,22 @@
 import React from 'react';
-import {NavLink,  } from 'react-router';
-
+import {Link, NavLink,  } from 'react-router';
+import logo from '../../assets/logo.png'
+import { FaGithub } from "react-icons/fa";
 const Navbar = () => {
 
 
     const links =<>
-    <NavLink to='/' className={({ isActive }) => isActive ? 'border-b-2 border-green-500 m-2' : 'm-2'}>
+<NavLink to='/' className={({ isActive }) => isActive ? 'border-b-2 border-[#9341cf] font-bold text-[#9341cf] m-2' : 'm-2'}>
     Home
 </NavLink>
-          <NavLink 
-    to='/about' 
-    className={({ isActive }) => `${isActive ? 'border-b-2 border-green-500' : ''}`}
->
-    About
+    <NavLink to='/apps' className={({ isActive }) => isActive ? 'border-b-2 border-[#9341cf] font-bold text-[#9341cf] m-2' : 'm-2'}>
+    Apps
 </NavLink>
-          <NavLink to='/readList' className={({ isActive }) => isActive ? 'border-b-2 border-green-500 m-2' : 'm-2'}>
-    ReadList
+
+ <NavLink to='/installation' className={({ isActive }) => isActive ? 'border-b-2 border-[#9341cf] font-bold text-[#9341cf] m-2' : 'm-2'}>
+   Installation
 </NavLink>
+
     
     </>
     return (
@@ -24,7 +24,7 @@ const Navbar = () => {
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+        <svg xmlns={logo} className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
       </div>
       <ul
         tabIndex="-1"
@@ -34,7 +34,7 @@ const Navbar = () => {
      }
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl font-bold">Boi Poka</a>
+    <Link to={'/'} className=" btn bg-white border-0 items-center text-2xl font-bold bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent"><img className='w-[50px]' src={logo} alt="" />HERO.IO</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -44,7 +44,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    <a href='https://github.com/Samirsrz/mission_restart_A3' className="btn bg-linear-to-r text-white font-semibold from-[#632EE3] to-[#9F62F2]"><FaGithub />Contribute</a>
   </div>
 </div>
     );
