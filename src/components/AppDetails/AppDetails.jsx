@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import toast, { Toaster } from 'react-hot-toast';
+import { addInstallApps } from '../Js/AddToDB';
 
 const AppDetails = () => {
     const data = useLoaderData();
@@ -15,9 +16,10 @@ const AppDetails = () => {
 
     const { title, image, downloads, ratingAvg, reviews, description, size, companyName, ratings } = app;
 
-    const handleInstall = () => {
+    const handleInstall = (id) => {
         setInstalled(true);
         toast.success('App Installed Successfully!');
+        addInstallApps(id);
     };
 
     return (
@@ -44,10 +46,7 @@ const AppDetails = () => {
                         </div>
                     </div>
 
-                    <button
-                        onClick={handleInstall}
-                        disabled={installed}
-                        className={`mt-4 px-6 py-2 rounded-lg font-semibold w-fit transition
+                    <button onClick={()=>handleInstall(id)} disabled={installed} className={`mt-4 px-6 py-2 rounded-lg font-semibold w-50
                             ${installed ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-green-500 text-white cursor-pointer'}`}
                     >
                         {installed ? 'Installed' : `Install Now (${size} MB)`}

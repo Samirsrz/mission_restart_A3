@@ -1,7 +1,6 @@
 
 import { useLoaderData } from 'react-router';
 import AppCard from '../TrendingSection/SingleAppCard/AppCard';
-import toast from 'react-hot-toast';
 import { useState } from 'react';
 import AppError from '../Error/AppError';
 
