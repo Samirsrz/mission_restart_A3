@@ -8,17 +8,18 @@ import Apps from "../components/Apps/Apps";
 import Installation from "../components/Installation/Installation";
 import { Suspense } from "react";
 import AppDetails from "../components/AppDetails/AppDetails";
+import Error from "../components/Error/Error";
 export const router = createBrowserRouter([
 
 {
     path:'/',
     element:<Root />,
-    errorElement:<div>This is ERROR</div>,
+    errorElement:<Error />,
     children:[
       {
         index:true,
          loader:async()=>{
-          const res = await fetch("appData.json");
+          const res = await fetch("/appData.json");
           return res.json()
          },
         Component: Home
@@ -26,7 +27,7 @@ export const router = createBrowserRouter([
       {
         path:'apps',
           loader:async()=>{
-          const res = await fetch("appData.json");
+          const res = await fetch("/appData.json");
           return res.json()
          },
         Component: Apps
@@ -34,7 +35,7 @@ export const router = createBrowserRouter([
       {
         path:'apps/:id',
           loader:async()=>{
-          const res = await fetch("appData.json");
+          const res = await fetch("/appData.json");
           return res.json()
          },
         Component: AppDetails

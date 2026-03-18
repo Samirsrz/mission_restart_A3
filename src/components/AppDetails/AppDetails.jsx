@@ -6,7 +6,9 @@ import toast, { Toaster } from 'react-hot-toast';
 const AppDetails = () => {
     const data = useLoaderData();
     const { id } = useParams();
+
     const app = data.find(a => a.id === parseInt(id));
+
     const [installed, setInstalled] = useState(false);
 
     if (!app) return <div>App not found!</div>;
@@ -59,7 +61,6 @@ const AppDetails = () => {
                     <BarChart
                         layout="vertical"
                         data={[...ratings].reverse()}
-                        margin={{ top: 0, right: 30, left: 10, bottom: 0 }}
                     >
                         <CartesianGrid strokeDasharray="3 3" horizontal={false} />
                         <XAxis type="number" />

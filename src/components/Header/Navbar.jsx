@@ -34,7 +34,7 @@ const Navbar = () => {
      }
       </ul>
     </div>
-    <Link to={'/'} className=" btn bg-white border-0 items-center text-2xl font-bold bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent"><img className='w-[50px]' src={logo} alt="" />HERO.IO</Link>
+    <Link to={'/'} className=" btn bg-white border-0 items-center text-2xl font-bold bg-linear-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent"><img className='w-[50px]' src={logo} alt="" />HERO.IO</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
