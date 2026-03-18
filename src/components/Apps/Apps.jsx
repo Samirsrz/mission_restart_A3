@@ -2,10 +2,12 @@
 import { useLoaderData } from 'react-router';
 import AppCard from '../TrendingSection/SingleAppCard/AppCard';
 import toast from 'react-hot-toast';
+import { useState } from 'react';
+import AppError from '../Error/AppError';
 
 const Apps = () => {
     const data = useLoaderData();
-    
+    const [filteredApp,setFilteredApp]=useState(data)
 
   const handleSearch=(e)=>{
     e.preventDefault();
@@ -13,7 +15,8 @@ const Apps = () => {
     console.log(searchApp);
 
     const foundApp = data.filter(d=>d.title.toLowerCase().includes(searchApp.toLowerCase()));
-   console.log(foundApp);
+    console.log(foundApp);
+    setFilteredApp(foundApp)
     
   }
     return (
@@ -29,11 +32,15 @@ const Apps = () => {
 
             </form>
        </div>
-              <div className='grid grid-cols-2 my-12 lg:grid-cols-4 gap-3.5'>
-                {
-                      data.map(singleData=> <AppCard key={singleData.id} singleData={singleData} />)
-                }
-            </div>
+ 
+              {
+                filteredApp.length > 0 ? <div className='grid grid-cols-2 my-12 lg:grid-cols-4 gap-3.5'>
+                    {filteredApp.map(singleData => <AppCard key={singleData.id} singleData={singleData} />)}
+                  </div> : <AppError />
+               
+              }          
+ 
+           
         </div>
     );
 };
