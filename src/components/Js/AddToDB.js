@@ -14,7 +14,7 @@ const getInstallApps=()=>{
 const addInstallApps=(id)=>{
    const installApps = getInstallApps();
    if(installApps.includes(id)){
-    return toast.error('This is already installed')
+    return 
    } 
    else{
     installApps.push(id);
@@ -27,6 +27,6 @@ const uninstallApp = (id) => {
     const installedApps=installedAppsstr.map(i=>parseInt(i))
     const updated = installedApps.filter(appId => appId !== id);
     localStorage.setItem("installedApps", JSON.stringify(updated));
-    toast.success("App Uninstalled!");
+    toast("App Uninstalled!");
 }
 export {getInstallApps,addInstallApps,uninstallApp}

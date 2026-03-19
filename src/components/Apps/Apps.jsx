@@ -27,7 +27,7 @@ const Apps = () => {
             <p className='font-bold text-xl border-b-2 border-gray-600'>({data.length}) Apps Found</p>
             <form onChange={handleSearch} action="">
                 <input type="text" name="searchApp" className='rounded-lg p-2 bg-base-300 border-2' placeholder='Search Apps...'  id="" />
-                <input className='btn bg-linear-to-r from-[#632EE3] to-[#9F62F2] p-2' type="submit" value="search" name="" id="" />
+                {/* <input className='btn bg-linear-to-r from-[#632EE3] to-[#9F62F2] p-2' type="submit" value="search" name="" id="" /> */}
 
             </form>
        </div>

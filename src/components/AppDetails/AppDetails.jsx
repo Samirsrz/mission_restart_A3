@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from 'react-router';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import toast, { Toaster } from 'react-hot-toast';
 import { addInstallApps } from '../Js/AddToDB';
+import AppError from '../Error/AppError';
 
 const AppDetails = () => {
     const data = useLoaderData();
@@ -12,7 +13,7 @@ const AppDetails = () => {
 
     const [installed, setInstalled] = useState(false);
 
-    if (!app) return <div>App not found!</div>;
+    if (!app) return <AppError />;
 
     const { title, image, downloads, ratingAvg, reviews, description, size, companyName, ratings } = app;
 
